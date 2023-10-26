@@ -4,7 +4,7 @@ import { createMemoryHistory, createBrowserHistory } from 'history';
 import App from './App';
 
 // Mount function (don't export react compont as container app might not use react)
-const mount = (el, { onNavigate, defaultHistory, initialPath }) => {
+const mount = (el, { onSignin, onNavigate, defaultHistory, initialPath }) => {
   const history =
     defaultHistory ||
     createMemoryHistory({
@@ -13,7 +13,7 @@ const mount = (el, { onNavigate, defaultHistory, initialPath }) => {
   if (onNavigate) {
     history.listen(onNavigate);
   }
-  ReactDOM.render(<App history={history} />, el);
+  ReactDOM.render(<App history={history} onSignin={onSignin} />, el);
 
   return {
     onParentNavigate({ pathname: nextPathName }) {

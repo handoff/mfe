@@ -2,7 +2,7 @@ import { mount } from 'auth/AuthApp'; // Package declared in webpack.dev.js file
 import React, { useEffect, useRef } from 'react';
 import { useHistory } from 'react-router-dom';
 
-export default () => {
+export default ({ onSignin }) => {
   const ref = useRef(null);
   const history = useHistory();
 
@@ -15,6 +15,9 @@ export default () => {
         if (pathname !== nextPathName) {
           history.push(nextPathName);
         }
+      },
+      onSignin: () => {
+        onSignin();
       },
     });
 
