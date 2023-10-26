@@ -1,4 +1,4 @@
-import { mount } from 'marketing/MarketingApp'; // Package declared in webpack.dev.js files
+import { mount } from 'auth/AuthApp'; // Package declared in webpack.dev.js files
 import React, { useEffect, useRef } from 'react';
 import { useHistory } from 'react-router-dom';
 

@@ -28,7 +28,7 @@ const mount = (el, { onNavigate, defaultHistory, initialPath }) => {
 
 // If development and in isolation, call mount immediately
 if (process.env.NODE_ENV === 'development') {
-  const devRoot = document.querySelector('#_marketing-dev-root');
+  const devRoot = document.querySelector('#_auth-dev-root');
   if (devRoot) {
     // Provide a browser history in isolation mode so that path is visible in address bar
     mount(devRoot, { defaultHistory: createBrowserHistory() });
